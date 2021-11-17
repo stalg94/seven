@@ -9,10 +9,15 @@ class UserController extends Controller
 {
     public function uploadAvatar(Request $request)
     {
+        if($request->hasFile('image')){
+            $filename = $request->image->getClientOriginalName();
+            $request->image->storeAs('images',$filename,'public');
+            User::find(1)->update(['avatar' => $filename]);
+        }
        // $request->image->store('images','public');
-        User::find(1)->update(['avatar' => 'adsfd']);
 
-        return 'uploadeddddd';
+
+        return redirect()->back();
     }
 
     //
