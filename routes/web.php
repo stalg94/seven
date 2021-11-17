@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use Illuminate\Http\Request;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,6 +19,7 @@ Route::get('/', function () {
 });
 
 Route::get('/user', [UserController::class,'index']);
+Route::post('/upload', [UserController::class,'uploadAvatar']);
 
 Auth::routes();
 

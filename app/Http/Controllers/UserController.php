@@ -7,6 +7,13 @@ use Illuminate\Support\Facades\DB;
 
 class UserController extends Controller
 {
+    public function uploadAvatar(Request $request)
+    {
+       // $request->image->store('images','public');
+        User::find(1)->update(['avatar' => 'adsfd']);
+
+        return 'uploadeddddd';
+    }
 
     //
     public function index()
