@@ -2,7 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\TodoController;
 use Illuminate\Http\Request;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +15,13 @@ use Illuminate\Http\Request;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Route::get('/todos', [TodoController::class,'index']);
+Route::get('/todos/create', [TodoController::class,'create']);
+Route::get('/todos/edit', [TodoController::class,'edit']);
+
+Route::post('/todos/create', [TodoController::class,'store']);
+
 
 Route::get('/', function () {
     return view('welcome');
