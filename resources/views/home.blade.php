@@ -17,6 +17,18 @@
                     {{ __('You are logged in!') }}
                 </div>
                 <div class="card-body">
+{{--                    @if(session()->has('message'))--}}
+{{--                      {{session()->forget('message')}}--}}
+{{--                        <div class="alert alert-success">{{session()->get('message')}}</div>--}}
+{{--                    @elseif(session()->has('error'))--}}
+{{--                        <div class="alert alert-danger">{{session()->get('error')}}</div>--}}
+{{--                    @endif--}}
+{{--                    @include('layouts.flash')--}}
+                    <x-alert>
+                        <p>
+                            Here is response on image upload!
+                        </p>
+                    </x-alert>
                     <form action="/upload" method="post" enctype="multipart/form-data">
                         @csrf
                         <input type="file" name="image"/>
