@@ -13,5 +13,5 @@
         <button style="cursor: pointer" type="submit" value="Update" class=" py-2 border rounded">Update</button>
     </form>
 
-    <a href="/todos" class="m-5 py-1 py-1 bg-white-400 hover:bg-blue-300 cursor-pointer border rounded">Back</a>
+    <a href="{{route('todo.index')}}" class="m-5 py-1 py-1 bg-white-400 hover:bg-blue-300 cursor-pointer border rounded">Back</a>
 @endsection
