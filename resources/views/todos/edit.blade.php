@@ -14,9 +14,18 @@
     <form method="post" action="{{route('todo.update', $todo->id)}}" class="py-5 ">
         @csrf
         @method('patch')
-        <input type="text" name="title" value="{{$todo->title}}" class="py-2 px-2 border rounded">
+        <div>
+            <input type="text" name="title" value="{{$todo->title}}" placeholder="Title" class="py-2 px-2 border rounded">
+        </div>
+        <div class="py-1">
+            <textarea name="description" class="p-2 rounded border"  placeholder="Description">{{$todo->description}}</textarea>
+        </div>
+        <div>
+            <button style="cursor: pointer" type="submit" value="Update" class=" py-2 border rounded">Update</button>
+        </div>
+
         {{--        <input type="submit" value="Create" >--}}
-        <button style="cursor: pointer" type="submit" value="Update" class=" py-2 border rounded">Update</button>
+
     </form>
 
 {{--   <a href="{{route('todo.index')}}" class="m-5 py-1 py-1 bg-white-400 hover:bg-blue-300 cursor-pointer border rounded">Back</a>--}}
