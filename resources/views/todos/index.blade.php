@@ -10,8 +10,7 @@
 
 <ul class="my-5">
     <x-alert />
-    @foreach( $todos as $todo)
-
+    @forelse( $todos as $todo)
         <li class="flex justify-between py-2 px-2">
             <div>
                 @include('todos.complete-button')
@@ -38,7 +37,11 @@
                 </form>
             </div>
         </li>
-    @endforeach
+
+    @empty
+        <p>No task available, create one.</p>
+
+    @endforelse
 </ul>
 
 @endsection
