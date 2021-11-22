@@ -20,9 +20,13 @@
         <div class="py-1">
             <textarea name="description" class="p-2 rounded border"  placeholder="Description">{{$todo->description}}</textarea>
         </div>
+        <div class="py-1">
+            @livewire('edit-step',['steps' => $todo->steps])
+        </div>
         <div>
             <button style="cursor: pointer" type="submit" value="Update" class=" py-2 border rounded">Update</button>
         </div>
+
 
         {{--        <input type="submit" value="Create" >--}}
 
